@@ -17,8 +17,18 @@ def res_message():
             continue
 
 
+start = input("If you are goring to run both scripts in on computer input 1, otherwise press 2: ")
+
+if start == "1":
+    host = "0.0.0.0"
+elif start == "2":
+    host = input("Enter IP address of server: ")
+else:
+    print("You don`t choose valid option!!!")
+    exit(-1)
+
+
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = '0.0.0.0'
 port = 5000
 
 client_socket.connect((host, port))
